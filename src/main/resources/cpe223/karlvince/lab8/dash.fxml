@@ -34,6 +34,8 @@
 
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -43,7 +45,7 @@
 <BorderPane style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cpe223.karlvince.lab8.DashController">
 
     <top>
-        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 14 24 14 24;                      -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 14 24 14 24; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
 
             <Label style="-fx-text-fill: #1a1a2e; -fx-font-weight: bold;" text="Student Performance">
                 <font><Font size="18" /></font>
@@ -51,16 +53,65 @@
 
             <Region HBox.hgrow="ALWAYS" />
 
-            <Label style="-fx-text-fill: #555555; -fx-font-size: 13;" text="Chart:" />
-            <ComboBox fx:id="chartCombo" prefWidth="180" style="-fx-font-size: 13;" />
-
             <Label style="-fx-text-fill: #555555; -fx-font-size: 13;" text="Dataset:" />
             <ComboBox fx:id="datasetCombo" prefWidth="160" style="-fx-font-size: 13;" />
         </HBox>
     </top>
 
     <center>
-        <StackPane fx:id="chartContainer" style="-fx-padding: 16; -fx-background-color: #f5f5f5;" />
+        <TabPane fx:id="chartTabPane" tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #f5f5f5;">
+
+            <tabs>
+                <Tab text="Bar Chart">
+                    <content>
+                        <StackPane fx:id="barChartPane" style="-fx-padding: 12;" />
+                    </content>
+                </Tab>
+
+                <Tab text="Pie Chart">
+                    <content>
+                        <StackPane fx:id="pieChartPane" style="-fx-padding: 12;" />
+                    </content>
+                </Tab>
+
+                <Tab text="Area Chart">
+                    <content>
+                        <StackPane fx:id="areaChartPane" style="-fx-padding: 12;" />
+                    </content>
+                </Tab>
+
+                <Tab text="Bubble Chart">
+                    <content>
+                        <StackPane fx:id="bubbleChartPane" style="-fx-padding: 12;" />
+                    </content>
+                </Tab>
+
+                <Tab text="Line Chart">
+                    <content>
+                        <StackPane fx:id="lineChartPane" style="-fx-padding: 12;" />
+                    </content>
+                </Tab>
+
+                <Tab text="Scatter Chart">
+                    <content>
+                        <StackPane fx:id="scatterChartPane" style="-fx-padding: 12;" />
+                    </content>
+                </Tab>
+
+                <Tab text="Stacked Area Chart">
+                    <content>
+                        <StackPane fx:id="stackedAreaChartPane" style="-fx-padding: 12;" />
+                    </content>
+                </Tab>
+
+                <Tab text="Stacked Bar Chart">
+                    <content>
+                        <StackPane fx:id="stackedBarChartPane" style="-fx-padding: 12;" />
+                    </content>
+                </Tab>
+            </tabs>
+
+        </TabPane>
     </center>
 
 </BorderPane>
